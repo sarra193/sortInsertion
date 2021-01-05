@@ -1,0 +1,27 @@
+FUNCTION Sort(arr : ARRAY_OF INTEGER[]) :  array
+VAR
+      key,current : INTEGER;
+BEGIN 
+      FOR i FROM 1 TO arr.length STEP 1  DO
+            key := arr[i]
+            current :=i-1
+
+            WHILE (j>=0 and arr[j] > key) DO
+                  arr[j+1] = arr[j]
+                  j = j-1;
+            END_WHILE
+            arr[j+1]=key
+      END_FOR
+      return arr;
+END
+
+
+
+ALGORITHM insertionSort
+VAR
+      array : ARRAY_OF INTEGER[];
+BEGIN
+      read(array);
+      sortedArray := Sort(array);
+      write(sortedArray);
+END
